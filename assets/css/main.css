@@ -421,6 +421,13 @@ section,
   overflow: clip;
 }
 
+/* Helps Bootstrap rows inside sections align perfectly centered when using justify-content-center */
+section .row,
+.section .row {
+  width: 100%;
+}
+
+
 /*--------------------------------------------------------------
 # Global Section Titles
 --------------------------------------------------------------*/
@@ -662,6 +669,73 @@ section,
 
 
 /*--------------------------------------------------------------
+# Technical Skills Cards
+--------------------------------------------------------------*/
+.technical-skills-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.technical-skill-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+  padding: 16px 16px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  border: 1px solid rgba(79, 138, 139, 0.18);
+}
+
+.technical-skill-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.12);
+}
+
+.technical-skill-card .card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.technical-skill-card .card-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(79, 138, 139, 0.12);
+  color: #4F8A8B;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.technical-skill-card .card-title {
+  font-weight: 800;
+  margin: 0;
+  font-family: var(--heading-font);
+  color: var(--heading-color);
+  font-size: 16px;
+}
+
+.technical-skill-card ul {
+  margin: 0;
+  padding-left: 16px;
+}
+
+.technical-skill-card li {
+  margin: 6px 0;
+  color: var(--default-color);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.technical-skill-card li::marker {
+  color: #F45B69;
+}
+
+/*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
 .contact {
@@ -733,5 +807,15 @@ section,
     margin-bottom: 10px;
   }
 }
+
+.contact-form-wrap label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.contact-form-wrap .form-control {
+  border: 1px solid rgba(79, 138, 139, 0.18);
+}
+
 
 
